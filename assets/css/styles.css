@@ -147,31 +147,31 @@ img {
   align-items: center;
 }
 
-/* @media screen and (max-width: 768px) {
-} */
-.nav__menu {
-  position: fixed;
-  top: var(--header-height);
-  left: -100%;
-  width: 70%;
-  height: 100vh;
-  padding: 2rem;
-  background-color: var(--white-color);
-  transition: 0.5s;
-}
+@media screen and (max-width: 768px) {
+  .nav__menu {
+    position: fixed;
+    top: var(--header-height);
+    left: -100%;
+    width: 70%;
+    height: 100vh;
+    padding: 2rem;
+    background-color: var(--white-color);
+    transition: 0.5s;
+  }
 
-.nav__item {
-  margin-bottom: var(--mb-4);
-}
+  .nav__item {
+    margin-bottom: var(--mb-4);
+  }
 
-.nav__logo {
-  font-weight: var(--font-semi-bold);
-}
+  .nav__logo {
+    font-weight: var(--font-semi-bold);
+  }
 
-.nav__toggle,
-.nav__shop {
-  font-size: 1.3rem;
-  cursor: pointer;
+  .nav__toggle,
+  .nav__shop {
+    font-size: 1.3rem;
+    cursor: pointer;
+  }
 }
 
 /* SHOW MENU */
@@ -216,6 +216,31 @@ img {
   display: flex;
   justify-content: center;
   align-self: center;
+}
+
+.home__data{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home__data .home__new{
+  font-size: 2rem;
+}
+
+.home__data .home__title{
+  font-size: 2.3rem;
+  text-align: center;
+}
+
+.home__data .home__description{
+  font-size: 2rem;
+  text-align: center;
+}
+
+.home__data .button{
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 .home__shape {
@@ -493,7 +518,7 @@ img {
 }
 
 .newsletter__subcribe {
-  display: flex;
+  /* display: flex; */
   column-gap: 0.5rem;
   background-color: var(--white-color);
   padding: 0.5rem;
@@ -503,7 +528,8 @@ img {
 .newsletter__input {
   outline: none;
   border: none;
-  width: 90%;
+  /* width: 90%; */
+  /* display: flex; */
   font-size: var(--normal-font-size);
 }
 
@@ -537,9 +563,124 @@ img {
   margin-right: 1.25rem;
 }
 
-.footer__copy{
+.footer__copy {
   padding-top: 3rem;
   font-size: var(--smaller-font-size);
   color: var(--dark-color-light);
   text-align: center;
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media screen and (min-width: 576px) {
+  .collection__container {
+    grid-template-columns: 415px;
+  }
+
+  .collection__img {
+    width: 260px;
+  }
+
+  .offer__container {
+    grid-template-columns: max-content max-content;
+  }
+
+  .offer__data {
+    text-align: center;
+  }
+
+  .new__mens {
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    margin: 0;
+  }
+
+  .section {
+    padding: 7rem 0 3rem;
+  }
+
+  .section-title::after {
+    width: 76px;
+  }
+
+  .nav {
+    height: calc (var (-header-height) + 1.5rem);
+  }
+  .nav__list {
+    display: flex;
+  }
+  .nav__item {
+    margin-left: var (-mb-6);
+    margin-bottom: 0;
+    padding: 2rem;
+  }
+  .nav__toggle {
+    display: none;
+  }
+
+  .home__container {
+    height: 100vh;
+    grid-template-columns: max-content max-content;
+    justify-content: center;
+    align-items: center;
+  }
+  .home__sneaker {
+    order: 1;
+  }
+  .home__shape {
+    width: 376px;
+    height: 376px;
+  }
+  .home__img {
+    width: 470px;
+    top: 3.5rem;
+    right: 0;
+    left: -3rem;
+  }
+
+  .newsletter__container {
+    grid-template-columns: max-content max-content;
+    justify-content: center;
+    align-items: center;
+    padding: 4.5rem 2rem;
+    column-gap: 3rem;
+  }
+  .newsletter__description {
+    margin-bottom: 0;
+  }
+  .newsletter__subscribe {
+    width: 360px;
+    height: max-content;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .bd-grid {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .home__container {
+    column-gap: 8rem;
+  }
+
+  .collection__container {
+    grid-template-columns: repeat (2, 415px);
+  }
+
+  .new__container {
+    grid-template-columns: max-content 1fr;
+  }
+  .new__mens {
+    align-items: initial;
+    justify-content: flex-end;
+    padding: 4rem 2rem;
+  }
+
+  .new__mens-img {
+    margin-bottom: var (-mb-6);
+  }
 }
